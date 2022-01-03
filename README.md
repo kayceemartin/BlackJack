@@ -54,3 +54,4 @@ things i will need
     
     
 
+![PROJECT-1-BLACKJACK-WIREFRAME](https://user-images.githubusercontent.com/95602124/147981272-2b5b7f87-62a9-4e31-8703-9b73147949ce.png)
