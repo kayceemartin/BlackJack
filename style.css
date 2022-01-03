@@ -1,0 +1,12 @@
+h1 {
+    text-align: center;
+    flex
+
+}
+
+
+.gameboard {
+    background-color: green;
+    width: 600px;
+    margin: auto;
+}
