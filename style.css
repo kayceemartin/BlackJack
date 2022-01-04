@@ -2,7 +2,6 @@ body {
     background-color: darkgreen;
     gap: .5rem;
     cursor: pointer;
-
 }
 
 h1 {
@@ -24,7 +23,7 @@ h1 {
 }
 
 .deck {
-    height: 160px;
+    height: 180px;
     width: 120px;
     padding: 3px;
     border: 3px solid black;
@@ -47,4 +46,22 @@ h1 {
     position: absolute;
     font-size: 6rem;
     content: attr(data-value);
+}
+
+.button1 {
+    background-color: yellow;
+    border-radius: 50%;
+    font-size: 20px;
+}
+
+.button2 {
+    background-color: yellow;
+    border-radius: 50%;
+    font-size: 20px;
+}
+
+.button3 {
+    background-color: yellow;
+    border-radius: 50%;
+    font-size: 20px;
 }
