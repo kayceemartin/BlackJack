@@ -1,0 +1,50 @@
+body {
+    background-color: darkgreen;
+    gap: .5rem;
+    cursor: pointer;
+
+}
+
+h1 {
+    text-align: center;
+    text-decoration: underline;
+    color: white;
+    background-color: darkgreen;
+    padding-top: 1rem;
+}
+
+.gameboard {
+    background: darkgreen;
+    text-align: center;
+    text-decoration: bold;
+    font-size: 20px;
+    align-items: center;
+    padding: 0%;
+    color: white;
+}
+
+.deck {
+    height: 160px;
+    width: 120px;
+    padding: 3px;
+    border: 3px solid black;
+    background-color: blue;
+    border-radius: 10px;
+    position: absolute;
+    left: 100px;
+    display: inline-block;
+}
+
+.card.black {
+    color: black;
+    position: absolute;
+    font-size: 6rem;
+    content: attr(data-value);
+}
+
+.card.red {
+    color: red;
+    position: absolute;
+    font-size: 6rem;
+    content: attr(data-value);
+}
