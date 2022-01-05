@@ -38,30 +38,40 @@ h1 {
     color: black;
     position: absolute;
     font-size: 6rem;
-    content: attr(data-value);
+    /* content: attr(data-value); */
 }
 
 .card.red {
     color: red;
     position: absolute;
     font-size: 6rem;
-    content: attr(data-value);
+    /* content: attr(data-value); */
 }
 
-.button1 {
+#deal {
     background-color: yellow;
     border-radius: 50%;
     font-size: 20px;
 }
 
-.button2 {
+#stay {
     background-color: yellow;
     border-radius: 50%;
     font-size: 20px;
 }
 
-.button3 {
+#hit {
     background-color: yellow;
     border-radius: 50%;
     font-size: 20px;
+}
+
+.score {
+    text-align: center;
+    text-decoration: underline;
+    color: purple;
+    background-color: darkgreen;
+    padding-top: 1rem;
+    font-size: 30px;
+
 }

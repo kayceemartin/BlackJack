@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kaycee's BlackJack Game</title>
-    <script defr src = "main.js"></script>
+    <script defer src = "main.js"></script>
     <link rel="stylesheet" href = "style.css"></link>
 </head>
 <body>
@@ -21,14 +21,20 @@
                 ♥
             </div> -->
         </div>
-        <h2>HOUSE</h2>
-        <button class="button1">deal</button>
-        <h3>PLAYER ONE</h3>
-        <button class="button2">stay</button>
-        <button class="button3">hit</button>
+        <div class = "Dealer's Hand">
+            <h2>HOUSE</h2>
+            <div class = "houseHand"></div>
+            <button id="deal">deal</button>
+        </div>
+        <div class = "Player's Hand"></div>
+            <h3>PLAYER ONE</h3>
+            <div class="playersHand"></div>
+            <button id="stay">stay</button>
+            <button id="hit">hit</button>
+        </div>
     </div>
    
    </div>
-    
+    <div class = "score">Score</div>
 </body>
 </html>
