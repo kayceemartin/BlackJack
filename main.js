@@ -3,6 +3,7 @@ console.log("BlackJack")
 const SUITS = ["♠", "♣", "♥", "♦"]
 const VALUES = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"]
 
+
 class Deck {
     constructor(cards = newDeck()) {
         this.cards = cards
@@ -22,6 +23,7 @@ class Deck {
     }
 }
 
+
 class Card {
     constructor(suit, value, points) {
         this.suit = suit
@@ -30,12 +32,13 @@ class Card {
     }
 }
 
+
 function newDeck() {
     return SUITS.flatMap(suit => {
         return VALUES.map(value => {
             if (value === "J" || value === "Q" || value === "K" || value === "10") {
                 return new Card (suit, value, 10)
-            } else if (value === "A" || value === "1"){
+            } else if (value === "A" || value === "1") {
                 return new Card (suit, value, 1)
             } else if (value === "2") {
                 return new Card (suit, value, 2)
@@ -55,16 +58,16 @@ function newDeck() {
                 return new Card (suit, value, 9)
             } 
             return new Card (suit, value)
-        } )
+        })
     })
 }
+
 
 const deck = new Deck ()
 deck.shuffle()
 console.log(deck.cards)
 
  let hand = []
-
 function deal() {
     while(hand.length < 2) {
         let cards = deck.cards.pop()
@@ -75,7 +78,6 @@ function deal() {
 let dealHand = deal()
 console.log(dealHand[0].value + dealHand[0].suit)
 
-
 const startGame = document.querySelector("#deal")
 console.log(startGame)
 
@@ -85,17 +87,21 @@ const playerHand = document.querySelector(".playersHand")
 startGame.addEventListener("click", function () {
     houseHand.innerHTML = dealHand[0].value + dealHand[0].suit
     playerHand.innerHTML = dealHand[1].value + dealHand[1].suit
-} )
+})
 
-  let x = 0 
+
+
+let x = 0 
 function hit () {
         if ( x >= 0) {
             playerHand.append(deck.cards[x].value + deck.cards[x].suit)
             x += 1
-        }
-        else if (x == 52) {
+        } else if (x == 52) {
             x = 0
         }
+        // if (points <= 21)
+        // return 
+
     }
 
 const hitButton = document.querySelector("#hit")
@@ -106,8 +112,7 @@ function stay () {
     if ( x >= 0 ) {
         houseHand.append(deck.cards[x].value + deck.cards[x].suit)
         x +=1
-    }
-    else if (x == 52) {
+    } else if (x == 52) {
         x = 0
     }
 }
@@ -116,7 +121,15 @@ const stayButton = document.querySelector("#stay")
 stayButton.addEventListener("click", stay)
 
 
-//function score () {
-    // this keeps score "Bust >= 22", "Push??" "BlackJack = 21"
 
+let score = 0
 
+// function calculateScore () {
+//     for ( let i = 0; i < playerPlayerHand.length; i++) {
+//         if (playerPlayerHand[i].points > score && playerPlayerHand[i].points < 22)
+//         let score = i
+//     } 
+//     score = playerPlayerHand[i].points
+// }
+
+// document.getElementById(".score").innerHTML = score
