@@ -89,16 +89,22 @@ console.log(startGame)
 const houseCards = document.querySelector(".houseHand")
 const playerCards = document.querySelector(".playersHand")
 const pHand = document.querySelector(".pHand")
+const dHand = document.querySelector(".dHand")
 
 let dealerHand = deal()
 let playerHand = deal()
 
 startGame.addEventListener("click", function () {
-    houseCards.innerHTML = dealerHand[0].value + dealerHand[0].suit
+    for (let j = 0; j < dealerHand.length; j++)
+    dHand.children[j].innerHTML = dealerHand[j].value + dealerHand[j].suit
+
     for (let i = 0; i < playerHand.length; i++) 
     pHand.children[i].innerHTML = playerHand[i].value + playerHand[i].suit
+
     console.log(playerHand)
     calculateScore(playerHand)
+    console.log(dealerHand)
+    houseScore(dealerHand)
 })
 
 
@@ -115,6 +121,7 @@ function hit () {
         }
         console.log(playerHand)
         calculateScore(playerHand)
+        winnerCheck()
     } 
 
 
@@ -127,10 +134,14 @@ hitButton.addEventListener("click", hit)
 function stay () {
     if ( x >= 0 ) {
         houseCards.append(deck.cards[x].value + deck.cards[x].suit)
+        dealerHand.push(deck.cards[x])
         x +=1
     } else if (x == 52) {
         x = 0
     }
+    console.log(dealerHand)
+    houseScore(dealerHand)
+    winnerCheck()
 }
 
 const stayButton = document.querySelector("#stay")
@@ -139,32 +150,63 @@ stayButton.addEventListener("click", stay)
 
 //**THIS IS MY SCORE FUNCTION**//
 
-let tempScore = 0
+let playerScore = 0
 function calculateScore (banana) {
     let sum = 0 
     for (let i = 0; i < banana.length; i++) {
         sum += banana[i].points
-        //console.log(tempScore)
     }
-    tempScore = sum
-    score.innerHTML = tempScore
-    console.log(tempScore)
-
+    playerScore = sum
+    score.innerHTML = playerScore
+    console.log(playerScore)
 }
 
 const score = document.querySelector(".score")
 
 
-function winnerCheck (playerTotal, dealerTotal) {
-    if (playerTotal > 21) {
-        return "Bust!"
-    } if (dealerTotal === 21) {
-        return "The Dealer got BlackJack"
-    } if (dealerTotal > 21) {
-        return "The Deal busted, Player One wins!"
-    } if (playerTotal === 21) {
-        return "BlackJack! Player One wins!"
-    } if (playerTotal === 21 && dealerTotal === 21){
-        return "push"
-    } console.log(winnerCheck)
-} 
+
+// **THIS IS THE DEALER SCORE FUNCTION**//
+
+let dealerScore = 0
+function houseScore (apple) {
+    let sum = 0
+    for (let j = 0; j < apple.length; j++) {
+        sum += apple[j].points
+    }
+    dealerScore = sum
+    console.log(dealerScore)
+}
+
+
+// //**THIS IS MY WIN CONDITION FUNCTION**//
+const winner = document.querySelector(".winner")
+function winnerCheck () {
+    let pScore = playerScore
+    let dScore = dealerScore
+    console.log(pScore)
+    console.log(dScore)
+     if (pScore > 21) {
+        console.log ("Bust!")
+         winner.innerText = "Bust!"
+    } else if (dScore === 21) {
+        console.log ("The Dealer got BlackJack")
+        winner.innerText = "The Dealer got BlackJack!"
+    } else if (dScore > 21) {
+        console.log ("The Dealer busted, Player One wins!")
+        winner.innerText = "The Dealer busted, Player One wins!"
+    } else if (pScore === 21) {
+        console.log ("BlackJack! Player One wins!")
+        winner.innerText = "BlackJack! Player One wins!"
+    } else if (pScore === 21 && dScore === 21) {
+        console.log ("push")
+        winner.innerText = "push"
+    } else if (pScore > dScore && pScore <= 21) {
+        console.log ("Player One wins!")
+        winner.innerText = "Player One wins!"
+    } else if (dScore > pScore && dScore <= 21) {
+        console.log ("Dealer wins!")
+        winner.innerText = "Dealer wins!"
+    } 
+}  
+    winnerCheck()
+   

@@ -34,20 +34,6 @@ h1 {
     display: inline-block;
 }
 
-.card.black {
-    color: black;
-    position: absolute;
-    font-size: 6rem;
-    /* content: attr(data-value); */
-}
-
-.card.red {
-    color: red;
-    position: absolute;
-    font-size: 6rem;
-    /* content: attr(data-value); */
-}
-
 #deal {
     background-color: yellow;
     border-radius: 50%;
@@ -72,10 +58,19 @@ h1 {
     color: purple;
     background-color: darkgreen;
     padding-top: 5rem;
-    font-size: 30px;
+    font-size: 50px;
 
 }
 
+.winner {
+    text-align: center;
+    text-decoration: underline;
+    color: rgb(151, 8, 8);
+    background-color: darkgreen;
+    padding-top: 5rem;
+    font-size: 30px;
+
+}
 /* .houseHand {
     padding-top: 8rem;
     
