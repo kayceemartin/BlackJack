@@ -79,3 +79,7 @@ Here are a few screenschots of the game in action!
 
 
 ![Screenshot (16)](https://user-images.githubusercontent.com/95602124/148790269-d71fbb0c-8057-4ccd-b6b7-67f1c0ffcf04.png)
+
+
+
+![Screenshot (17)](https://user-images.githubusercontent.com/95602124/148790376-b1cba939-c66e-481c-a161-5c813baa2528.png)
